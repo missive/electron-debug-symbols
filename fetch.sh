@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+if [ -z "$BRAVE_VERSIONS" ]; then
+    echo "Need to set BRAVE_VERSION to at least on brave/electron version"
+    exit 1
+fi
+
 for VERSION in `echo $BRAVE_VERSIONS`
 do
-  echo $VERSION
 
 	mkdir -p symbols/{win32-ia32-$VERSION,win32-x64-$VERSION,darwin-$VERSION,linux-$VERSION}
 
