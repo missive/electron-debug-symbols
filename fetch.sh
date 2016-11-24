@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z "$BRAVE_VERSIONS" ]; then
-    echo "Need to set BRAVE_VERSION to at least on brave/electron version"
+    echo "Need to set BRAVE_VERSIONS to at least one brave/electron version"
     exit 1
 fi
 
