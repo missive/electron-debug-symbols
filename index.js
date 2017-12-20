@@ -14,13 +14,13 @@ module.exports = {
   paths: function () {
     var dirs = fs.readdirSync(path.join(__dirname, 'symbols'))
     return _.map(dirs, function (dir) {
-      return path.join(__dirname, 'symbols', dir, 'brave.breakpad.syms')
+      return path.join(__dirname, 'symbols', dir, 'electron.breakpad.syms')
     })
   },
-  // return all symbol directories for a specific brave/electron version
+  // return all symbol directories for a specific electron version
   pathsForVersion: function(ver) {
     return _.map(platforms, function (platform) {
-      return path.join(__dirname, 'symbols', platform + '-' + ver, 'brave.breakpad.syms')
+      return path.join(__dirname, 'symbols', platform + '-' + version, 'electron.breakpad.syms')
     })
   }
 }
