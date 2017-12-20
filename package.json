@@ -1,22 +1,19 @@
 {
   "name": "electron-debug-symbols",
-  "version": "3.0.0",
-  "description": "Install brave/electron debug symbols using npm",
+  "version": "3.1.0",
+  "description": "Install electron debug symbols using npm",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brave/electron-debug-symbols"
+    "url": "https://github.com/missive/electron-debug-symbols"
   },
   "scripts": {
     "postinstall": "./fetch.sh"
   },
   "main": "index.js",
-  "dependencies": {
-    "underscore": "^1.8.3"
-  },
-  "author": "Ivo Georgiev",
+  "author": "Missive",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brave/electron-debug-symbols/issues"
+    "url": "https://github.com/missive/electron-debug-symbols/issues"
   },
-  "homepage": "https://github.com/brave/electron-debug-symbols"
+  "homepage": "https://github.com/missive/electron-debug-symbols"
 }

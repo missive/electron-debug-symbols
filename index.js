@@ -1,25 +1,25 @@
-var path = require("path")
-var fs = require("fs")
-var _ = require('underscore')
+const path = require('path')
+const fs = require('fs')
 
-var platforms = [
+const platforms = [
   'darwin',
   'linux',
   'win32-ia32',
-  'win32-x64'
+  'win32-x64',
 ]
 
 module.exports = {
   // return all symbol directories (including all versions)
-  paths: function () {
-    var dirs = fs.readdirSync(path.join(__dirname, 'symbols'))
-    return _.map(dirs, function (dir) {
+  paths: () => {
+    let dirs = fs.readdirSync(path.join(__dirname, 'symbols'))
+    return dirs.map((dir) => {
       return path.join(__dirname, 'symbols', dir, 'electron.breakpad.syms')
     })
   },
+
   // return all symbol directories for a specific electron version
-  pathsForVersion: function(ver) {
-    return _.map(platforms, function (platform) {
+  pathsForVersion: (version) => {
+    return platforms.map((platform) => {
       return path.join(__dirname, 'symbols', platform + '-' + version, 'electron.breakpad.syms')
     })
   }
