@@ -6,9 +6,6 @@
     "type": "git",
     "url": "https://github.com/missive/electron-debug-symbols"
   },
-  "scripts": {
-    "postinstall": "./fetch.sh"
-  },
   "main": "index.js",
   "author": "Missive",
   "license": "MIT",
