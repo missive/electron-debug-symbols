@@ -10,16 +10,18 @@ const platforms = [
 
 module.exports = {
   // return all symbol directories (including all versions)
-  paths: () => {
-    let dirs = fs.readdirSync(path.join(__dirname, 'symbols'))
+  paths: ({ relative } = {}) => {
+    let root = relative ? './' : __dirname
+    let dirs = fs.readdirSync(path.join(root, 'symbols'))
     return dirs.map((dir) => {
-      return path.join(__dirname, 'symbols', dir, 'electron.breakpad.syms')
+      return path.join(root, 'symbols', dir, 'electron.breakpad.syms')
     })
   },
 
   // return all symbol directories for a specific electron version
-  pathsForVersion: (version) => {
+  pathsForVersion: (version, { relative } = {}) => {
     return platforms.map((platform) => {
+      let root = relative ? './' : __dirname
       return path.join(__dirname, 'symbols', platform + '-' + version, 'electron.breakpad.syms')
     })
   }
